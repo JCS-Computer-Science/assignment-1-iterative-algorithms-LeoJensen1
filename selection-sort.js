@@ -1,12 +1,17 @@
 function selectionSort(array) {
-	/*
-	 ** Search through the whole array for the smallest element
-	 ** then swap it with the first element.
-	 ** Next, search through the whole array (except the first element)
-	 ** for the smallest, then swap it with the second element.
-	 ** Continue like this until you have only one element left.
-	 */
-
+	
+		for (let i = 0; i < array.length - 1; i++) {
+	  
+		  let minIndex = i;
+		  for (let j = i + 1; j < array.length; j++) {
+			if (array[j] < array[minIndex]) {
+			  minIndex = j;
+			}     
+		  }
+		  [array[i], array[minIndex]] = [array[minIndex], array[i]];
+		}
+		return array;
+	  
 	return array;
 }
 
